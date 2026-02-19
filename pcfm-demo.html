@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presbyterian Children &amp; Families Ministry | A Whānau-Based Ministry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-deep-teal: #1a5c52;
+            --color-teal: #2d8a7e;
+            --color-light-teal: #4aa89a;
+            --color-cream: #faf8f5;
+            --color-warm-white: #fffefb;
+            --color-terracotta: #c4714c;
+            --color-terracotta-light: #e8956e;
+            --color-earth: #8b7355;
+            --color-text: #2d3a36;
+            --color-text-light: #5a6b64;
+            --font-display: 'Bricolage Grotesque', sans-serif;
+            --font-body: 'Source Serif 4', Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Koru Pattern Background */
+        .koru-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath fill='%231a5c52' d='M100 20c-44 0-80 36-80 80 0 30 16 56 40 70 0-50 18-90 40-90s40 40 40 90c24-14 40-40 40-70 0-44-36-80-80-80z'/%3E%3C/svg%3E");
+            background-size: 300px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            background: rgba(255, 254, 251, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 30px rgba(26, 92, 82, 0.08);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--color-deep-teal);
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--color-text-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-text);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-terracotta);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-deep-teal);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--color-deep-teal);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 8rem 2rem 4rem;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--color-deep-teal) 0%, var(--color-teal) 50%, var(--color-light-teal) 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.2) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-tagline {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+        }
+
+        .btn {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--color-terracotta);
+            color: white;
+            border: 2px solid var(--color-terracotta);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-terracotta-light);
+            border-color: var(--color-terracotta-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(196, 113, 76, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--color-deep-teal);
+            border-color: white;
+        }
+
+        /* Scripture Quote */
+        .scripture-banner {
+            background: var(--color-warm-white);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .scripture-banner::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-body);
+            font-size: 8rem;
+            color: var(--color-teal);
+            opacity: 0.1;
+            line-height: 1;
+        }
+
+        .scripture-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--color-deep-teal);
+            line-height: 1.8;
+        }
+
+        .scripture-ref {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-terracotta);
+            margin-top: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .scripture-maori {
+            max-width: 800px;
+            margin: 1.5rem auto 0;
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--color-text-light);
+        }
+
+        /* Welcome Section */
+        .welcome {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .welcome-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .welcome-content h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-deep-teal);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .welcome-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-light);
+        }
+
+        .greeting-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .greeting-tag {
+            background: var(--color-cream);
+            border: 1px solid var(--color-teal);
+            color: var(--color-deep-teal);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .welcome-image {
+            position: relative;
+        }
+
+        .welcome-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(26, 92, 82, 0.15);
+        }
+
+        .welcome-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            border: 3px solid var(--color-terracotta);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        /* Programs Section */
+        .programs {
+            background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-warm-white) 100%);
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-deep-teal);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+        }
+
+        .programs-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(26, 92, 82, 0.05);
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-teal), var(--color-terracotta));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(26, 92, 82, 0.12);
+        }
+
+        .program-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .program-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--color-cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .program-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-deep-teal);
+            margin-bottom: 1rem;
+        }
+
+        .program-card p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .program-link {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--color-terracotta);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .program-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* Resources Section */
+        .resources {
+            padding: 6rem 2rem;
+            background: var(--color-deep-teal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resources::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
+            background-size: 100px;
+        }
+
+        .resources .section-header h2 {
+            color: white;
+        }
+
+        .resources .section-header p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .resource-tabs {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: transparent;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: white;
+            color: var(--color-deep-teal);
+            border-color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .resource-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .resource-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+
+        .resource-item-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--color-terracotta);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .resource-item-text h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .resource-item-text p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* Vision Section */
+        .vision {
+            padding: 6rem 2rem;
+            background: var(--color-warm-white);
+        }
+
+        .vision-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .vision-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .vision-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .vision-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .vision-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-deep-teal);
+            margin-bottom: 1rem;
+        }
+
+        .vision-card p {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 6rem 2rem;
+            background: var(--color-cream);
+        }
+
+        .team-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(26, 92, 82, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(26, 92, 82, 0.12);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 250px;
+            background: var(--color-cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-deep-teal);
+            margin-bottom: 0.25rem;
+        }
+
+        .team-role {
+            font-size: 0.9rem;
+            color: var(--color-terracotta);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .team-info p {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+        }
+
+        .team-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .team-contact a {
+            color: var(--color-teal);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .team-contact a:hover {
+            color: var(--color-terracotta);
+        }
+
+        /* News Section */
+        .news {
+            padding: 6rem 2rem;
+            background: var(--color-warm-white);
+        }
+
+        .news-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(26, 92, 82, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(26, 92, 82, 0.1);
+        }
+
+        .news-image {
+            height: 200px;
+            background: var(--color-cream);
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.05);
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-tag {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-terracotta);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .news-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-deep-teal);
+            margin: 0.75rem 0;
+            line-height: 1.4;
+        }
+
+        .news-content p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--color-deep-teal) 0%, var(--color-teal) 100%);
+            position: relative;
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+        }
+
+        .contact-item-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-item-text {
+            font-size: 1rem;
+        }
+
+        .contact-item-text strong {
+            display: block;
+            font-family: var(--font-display);
+            margin-bottom: 0.25rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.3rem;
+        }
+
+        .social-link:hover {
+            background: white;
+            color: var(--color-deep-teal);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-deep-teal);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 2px solid var(--color-cream);
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background: var(--color-cream);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-teal);
+            background: white;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form .btn-primary {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a2e2a;
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand .logo-text {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--color-terracotta-light);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .welcome-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .programs-grid,
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .vision-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .programs-grid,
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Mobile menu */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--color-warm-white);
+            z-index: 2000;
+            padding: 2rem;
+            transition: right 0.4s ease;
+            box-shadow: -10px 0 50px rgba(0,0,0,0.1);
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--color-deep-teal);
+            cursor: pointer;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            margin-top: 4rem;
+        }
+
+        .mobile-nav li {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-nav a {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--color-text);
+            text-decoration: none;
+            display: block;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-cream);
+            transition: color 0.3s;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--color-terracotta);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="koru-bg"></div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="30" cy="30" r="28" fill="#1a5c52" opacity="0.1"/>
+                    <path d="M30 8C18 8 10 18 10 28c0 8 4 14 10 18 0-16 4-26 10-26s10 10 10 26c6-4 10-10 10-18 0-10-8-20-20-20z" fill="#1a5c52"/>
+                    <path d="M25 50c0-12 2-18 5-18" stroke="#c4714c" stroke-width="2" fill="none"/>
+                    <path d="M35 50c0-12-2-18-5-18" stroke="#c4714c" stroke-width="2" fill="none"/>
+                    <circle cx="30" cy="18" r="3" fill="#c4714c"/>
+                </svg>
+                <div class="logo-text">
+                    Children &amp; Families
+                    <span>A whānau-based ministry</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="overlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-nav">
+        <button class="mobile-nav-close" onclick="toggleMobileMenu()">&times;</button>
+        <ul>
+            <li><a href="#home" onclick="toggleMobileMenu()">Home</a></li>
+            <li><a href="#about" onclick="toggleMobileMenu()">About</a></li>
+            <li><a href="#resources" onclick="toggleMobileMenu()">Resources</a></li>
+            <li><a href="#team" onclick="toggleMobileMenu()">Team</a></li>
+            <li><a href="#news" onclick="toggleMobileMenu()">News</a></li>
+            <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <p class="hero-tagline">Presbyterian Church of Aotearoa New Zealand</p>
+            <h1>Nurturing Faith in Every Whānau</h1>
+            <p class="hero-subtitle">Supporting communities of faith to share God's big story by engaging authentically with children and families across Aotearoa.</p>
+            <div class="hero-buttons">
+                <a href="#resources" class="btn btn-primary">Explore Resources →</a>
+                <a href="#about" class="btn btn-secondary">Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripture Banner -->
+    <section class="scripture-banner">
+        <p class="scripture-text">"Let the little children come to me. Don't keep them away. The kingdom of heaven belongs to people like them."</p>
+        <p class="scripture-ref">Matthew 19:14 (NIrV)</p>
+        <p class="scripture-maori">Nā, ko te kīanga a Īhu, "Tukua mai ngā tamariki nonohi, aua hoki e āraia atu tā rātou haere mai ki ahau; nō ngā pēnei hoki te rangatiratanga o te rangi." — Matiu 19:14</p>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome" id="about">
+        <div class="welcome-grid">
+            <div class="welcome-content reveal">
+                <h2>Nau Mai, Haere Mai!</h2>
+                <div class="greeting-list">
+                    <span class="greeting-tag">Haere Mai</span>
+                    <span class="greeting-tag">Talofa Lava</span>
+                    <span class="greeting-tag">Kia Orana</span>
+                    <span class="greeting-tag">Malo E Lelei</span>
+                    <span class="greeting-tag">Bula Vinaka</span>
+                </div>
+                <p><strong>Children and Families</strong> is a ministry of the Presbyterian Church of Aotearoa New Zealand (PCANZ). We serve the wider church by encouraging and supporting Children and Families Ministry workers in a variety of contexts.</p>
+                <p>A ministry to children and their families has always been at the heart of the church. From the early Sunday Schools to today's whānau-based approach, we continue to nurture faith across generations.</p>
+                <a href="#contact" class="btn btn-primary">Get In Touch →</a>
+            </div>
+            <div class="welcome-image reveal">
+                <img src="https://i0.wp.com/pcfm.org.nz/wp-content/uploads/2020/07/anna-earl-XBDHmIXvsvM-unsplash-1-scaled.jpg?w=800" alt="Children in church community">
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs">
+        <div class="section-header reveal">
+            <h2>Key Programmes</h2>
+            <p>Discover resources and initiatives designed to strengthen ministry with children and families in your community.</p>
+        </div>
+        <div class="programs-grid">
+            <div class="program-card reveal">
+                <div class="program-icon">🏠</div>
+                <h3>Whānau Friendly</h3>
+                <p>A process to help churches become more welcoming and inclusive spaces for families of all kinds.</p>
+                <a href="https://www.whanaufriendly.org.nz/" class="program-link">Learn More →</a>
+            </div>
+            <div class="program-card reveal">
+                <div class="program-icon">🛡️</div>
+                <h3>Safety WOF</h3>
+                <p>Essential training for leaders of Children and Families ministry, ensuring safe environments for all.</p>
+                <a href="https://safetywof.org.nz/" class="program-link">Get Certified →</a>
+            </div>
+            <div class="program-card reveal">
+                <div class="program-icon">⚓</div>
+                <h3>Anchored</h3>
+                <p>A comprehensive baptism and confirmation course for exploring faith with young people.</p>
+                <a href="#" class="program-link">Explore Course →</a>
+            </div>
+            <div class="program-card reveal">
+                <div class="program-icon">🙏</div>
+                <h3>Lectio Divina</h3>
+                <p>A beautiful spiritual discipline adapted for families to practice together at home.</p>
+                <a href="#" class="program-link">Start Practicing →</a>
+            </div>
+            <div class="program-card reveal">
+                <div class="program-icon">👨‍👩‍👧‍👦</div>
+                <h3>Family Faith Moments</h3>
+                <p>Simple, everyday opportunities to weave faith conversations into family life.</p>
+                <a href="#" class="program-link">Discover More →</a>
+            </div>
+            <div class="program-card reveal">
+                <div class="program-icon">☕</div>
+                <h3>Take 15</h3>
+                <p>Quick, practical resources for busy ministry leaders—designed for just 15 minutes.</p>
+                <a href="#" class="program-link">Take 15 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources" id="resources">
+        <div class="section-header reveal">
+            <h2>Resources Library</h2>
+            <p>Everything you need for meaningful ministry with children and families.</p>
+        </div>
+        <div class="resource-tabs">
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="switchTab('families')">For Families</button>
+                <button class="tab-btn" onclick="switchTab('leaders')">For Leaders</button>
+                <button class="tab-btn" onclick="switchTab('churches')">For Churches</button>
+            </div>
+            <div id="families" class="tab-content active">
+                <div class="resource-list">
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">🕯️</div>
+                        <div class="resource-item-text">
+                            <h4>Lent &amp; Easter</h4>
+                            <p>Seasonal resources for families</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">🎄</div>
+                        <div class="resource-item-text">
+                            <h4>Advent &amp; Christmas</h4>
+                            <p>Celebrate the season together</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">🔥</div>
+                        <div class="resource-item-text">
+                            <h4>Pentecost</h4>
+                            <p>Discover the Spirit's power</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">🏡</div>
+                        <div class="resource-item-text">
+                            <h4>Faith @ Home</h4>
+                            <p>Sharing faith in daily life</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">🎧</div>
+                        <div class="resource-item-text">
+                            <h4>Podcasts</h4>
+                            <p>Listen and learn together</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">📖</div>
+                        <div class="resource-item-text">
+                            <h4>Lectio Divina</h4>
+                            <p>Ancient practice for modern families</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="leaders" class="tab-content">
+                <div class="resource-list">
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">📚</div>
+                        <div class="resource-item-text">
+                            <h4>Curriculum Ideas</h4>
+                            <p>Structured teaching resources</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">🎭</div>
+                        <div class="resource-item-text">
+                            <h4>Christmas Skits</h4>
+                            <p>Drama resources for services</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">👥</div>
+                        <div class="resource-item-text">
+                            <h4>Intergenerational</h4>
+                            <p>All-age worship ideas</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">⭐</div>
+                        <div class="resource-item-text">
+                            <h4>5 'Matters'</h4>
+                            <p>Essential leadership principles</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">📁</div>
+                        <div class="resource-item-text">
+                            <h4>Kids Friendly Archives</h4>
+                            <p>Favourites from our history</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">🎙️</div>
+                        <div class="resource-item-text">
+                            <h4>Leader Podcasts</h4>
+                            <p>Training and inspiration</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="churches" class="tab-content">
+                <div class="resource-list">
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">🎃</div>
+                        <div class="resource-item-text">
+                            <h4>Light Party</h4>
+                            <p>Halloween alternative resources</p>
+                        </div>
+                    </a>
+                    <a href="https://safetywof.org.nz/" class="resource-item">
+                        <div class="resource-item-icon">✅</div>
+                        <div class="resource-item-text">
+                            <h4>Safety WOF</h4>
+                            <p>Child safety certification</p>
+                        </div>
+                    </a>
+                    <a href="https://www.whanaufriendly.org.nz/" class="resource-item">
+                        <div class="resource-item-icon">💚</div>
+                        <div class="resource-item-text">
+                            <h4>Whānau Friendly</h4>
+                            <p>Church assessment process</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">💧</div>
+                        <div class="resource-item-text">
+                            <h4>Anchored</h4>
+                            <p>Baptism &amp; Confirmation</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-item-icon">🙌</div>
+                        <div class="resource-item-text">
+                            <h4>Praying for Children</h4>
+                            <p>Intercession resources</p>
+                        </div>
+                    </a>
+                    <a href="http://kidsfriendly.org.nz/" class="resource-item">
+                        <div class="resource-item-icon">😊</div>
+                        <div class="resource-item-text">
+                            <h4>Kids Friendly</h4>
+                            <p>Legacy resources</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision">
+        <div class="section-header reveal">
+            <h2>Our Mission</h2>
+            <p>Serving the Children and Families ministry of the Presbyterian Church Aotearoa New Zealand</p>
+        </div>
+        <div class="vision-grid">
+            <div class="vision-card reveal">
+                <div class="vision-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" stroke="#1a5c52" stroke-width="2" fill="none" opacity="0.2"/>
+                        <path d="M50 20v30l20 15" stroke="#1a5c52" stroke-width="3" stroke-linecap="round"/>
+                        <circle cx="50" cy="50" r="8" fill="#c4714c"/>
+                    </svg>
+                </div>
+                <h3>Servant Leadership</h3>
+                <p>We lead the Presbyterian Church of Aotearoa New Zealand into authentic engagement with children and families.</p>
+            </div>
+            <div class="vision-card reveal">
+                <div class="vision-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="35" r="15" fill="#1a5c52" opacity="0.3"/>
+                        <circle cx="30" cy="65" r="12" fill="#1a5c52" opacity="0.3"/>
+                        <circle cx="70" cy="65" r="12" fill="#1a5c52" opacity="0.3"/>
+                        <path d="M50 50L30 65M50 50L70 65" stroke="#c4714c" stroke-width="3"/>
+                    </svg>
+                </div>
+                <h3>Advocate</h3>
+                <p>We advocate for children and families so they are woven into the fabric of the faith community with full participation.</p>
+            </div>
+            <div class="vision-card reveal">
+                <div class="vision-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="30" width="60" height="45" rx="5" stroke="#1a5c52" stroke-width="2" fill="none"/>
+                        <path d="M20 45h60" stroke="#1a5c52" stroke-width="2"/>
+                        <circle cx="50" cy="60" r="8" fill="#c4714c"/>
+                        <path d="M35 20h30v10H35z" fill="#1a5c52" opacity="0.3"/>
+                    </svg>
+                </div>
+                <h3>Resource</h3>
+                <p>We encourage, equip, and support church leaders and those who work with children and families.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="section-header reveal">
+            <h2>Our Team</h2>
+            <p>Meet the people supporting children and families ministry across Aotearoa</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card reveal">
+                <div class="team-image">
+                    <img src="https://i0.wp.com/pcfm.org.nz/wp-content/uploads/2022/02/Karo.png?w=300" alt="Karo Wilson">
+                </div>
+                <div class="team-info">
+                    <h3>Karo Wilson</h3>
+                    <p class="team-role">Director</p>
+                    <p>Passionate about helping young people discover who Jesus is and find their place within God's family and His Big Story.</p>
+                    <div class="team-contact">
+                        <a href="mailto:karo@presbyterian.org.nz">✉️ Email</a>
+                        <a href="tel:0272743322">📞 027 274 3322</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card reveal">
+                <div class="team-image">
+                    <img src="https://i0.wp.com/pcfm.org.nz/wp-content/uploads/2021/08/Mandi-Photo.jpg?w=300" alt="Mandi Geustyn">
+                </div>
+                <div class="team-info">
+                    <h3>Mandi Geustyn</h3>
+                    <p class="team-role">Otago &amp; Southland Advisor</p>
+                    <p>7 years of Children's Ministry experience, passionate about seeing people grow spiritually and supporting families in faith-forming activities.</p>
+                    <div class="team-contact">
+                        <a href="mailto:mandi@presbyterian.org.nz">✉️ Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card reveal">
+                <div class="team-image">
+                    <img src="https://i0.wp.com/images.squarespace-cdn.com/content/v1/63bf2db7ead9f86479ce30eb/7a82a552-a8b5-4f7b-96d1-a924e8e4d254/Julianne.jpg?w=300" alt="Julianne Managh">
+                </div>
+                <div class="team-info">
+                    <h3>Julianne Managh</h3>
+                    <p class="team-role">Kaimai Region Coach</p>
+                    <p>Working part-time to oversee all things children, youth and family ministry related in the Kaimai Presbytery region.</p>
+                    <div class="team-contact">
+                        <a href="mailto:julianne@presbyterian.org.nz">✉️ Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news" id="news">
+        <div class="section-header reveal">
+            <h2>What's New</h2>
+            <p>Latest resources, news, and updates from PCFM</p>
+        </div>
+        <div class="news-grid">
+            <div class="news-card reveal">
+                <div class="news-image">
+                    <img src="https://i0.wp.com/pcfm.org.nz/wp-content/uploads/2025/11/Advent-booklet-2025-1.png?w=400" alt="Advent Booklet 2025">
+                </div>
+                <div class="news-content">
+                    <span class="news-tag">New Resource</span>
+                    <h3>The Little Book of Advent 2025</h3>
+                    <p>Updated resource for families with daily scripture, questions, and prayers for the Advent season.</p>
+                </div>
+            </div>
+            <div class="news-card reveal">
+                <div class="news-image">
+                    <img src="https://i0.wp.com/pcfm.org.nz/wp-content/uploads/2024/08/Light-Party-Resource.png?w=400" alt="Light Party Resource">
+                </div>
+                <div class="news-content">
+                    <span class="news-tag">Resource</span>
+                    <h3>Light Party Resource</h3>
+                    <p>Free downloadable resource to help share the Gospel at your church's Light Party event.</p>
+                </div>
+            </div>
+            <div class="news-card reveal">
+                <div class="news-image" style="background: linear-gradient(135deg, var(--color-teal), var(--color-deep-teal)); display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 4rem;">📧</span>
+                </div>
+                <div class="news-content">
+                    <span class="news-tag">Newsletter</span>
+                    <h3>Woven E-News</h3>
+                    <p>Subscribe to stay connected with the latest from PCFM delivered straight to your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-grid">
+            <div class="contact-info reveal">
+                <h2>Let's Chat!</h2>
+                <p>We'd love to hear from you. Whether you have questions about our resources or want to connect about ministry in your context, reach out anytime.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div class="contact-item-text">
+                            <strong>Address</strong>
+                            PO Box 9049, Te Aro<br>Wellington 6141, Aotearoa NZ
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div class="contact-item-text">
+                            <strong>Email</strong>
+                            childrenandfamilies@presbyterian.org.nz
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div class="contact-item-text">
+                            <strong>Phone</strong>
+                            027 274 3322 (Karo Wilson)
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/presbyterianchildrenandfamilies" class="social-link" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/childrenandfamiliespcanz/" class="social-link" aria-label="Instagram">📷</a>
+                </div>
+            </div>
+            <div class="contact-form reveal">
+                <h3>Send us a message</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Presbyterian Children &amp; Families Ministry</div>
+                <p>A whānau-based ministry of the Presbyterian Church of Aotearoa New Zealand, nurturing faith in communities across the motu.</p>
+                <a href="https://www.presbyterian.org.nz/" style="display: inline-block;">
+                    <img src="https://i0.wp.com/pcfm.org.nz/wp-content/uploads/2020/07/pcanz-logo.png?w=200" alt="PCANZ Logo" style="height: 40px; opacity: 0.8;">
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">For Families</a></li>
+                    <li><a href="#">For Leaders</a></li>
+                    <li><a href="#">For Churches</a></li>
+                    <li><a href="#">Kids Friendly</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Programs</h4>
+                <ul>
+                    <li><a href="https://www.whanaufriendly.org.nz/">Whānau Friendly</a></li>
+                    <li><a href="https://safetywof.org.nz/">Safety WOF</a></li>
+                    <li><a href="#">Anchored</a></li>
+                    <li><a href="#">Take 15</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Events Calendar</a></li>
+                    <li><a href="#">Job Vacancies</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Presbyterian Children &amp; Families Ministry. All rights reserved.</p>
+            <p>Part of the <a href="https://www.presbyterian.org.nz/">Presbyterian Church of Aotearoa New Zealand</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+            document.querySelector('.overlay').classList.toggle('active');
+        }
+
+        // Tab switching
+        function switchTab(tabId) {
+            // Remove active class from all buttons and content
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            event.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Scroll reveal animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial check
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
