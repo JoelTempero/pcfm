@@ -405,6 +405,13 @@ Organized into:
    - Seeking to employ a Children and Families worker
    - Contact: Rachel Judge, rachel.judge@mosgielchurch.org.nz
 
+4. **The Village**
+   - Opportunity to join their ministry team with the role of leading ministry to children
+   - Enabling their vision in the context of developing Sunday morning children's ministry and a community-facing after school club that operates two afternoons per week during term time
+
+### Related Links
+- Presbyterian Church of Aotearoa New Zealand jobs page: https://www.presbyterian.org.nz/about-us/jobs
+
 ---
 
 ## Page: Anchored (Baptism & Confirmation Course)
@@ -816,7 +823,10 @@ URL: /local/
 Route: /local
 
 ### Content
-- Local job listings and ministry opportunities (see Job Vacancies page for details)
+- Local job listings and ministry opportunities
+- Page is dynamically updated with current vacancies
+- Lists same type of positions as Job Vacancies page but focused on local/parish-level roles
+- Note: Content overlaps with Job Vacancies page (/job-vacancies-2/)
 
 ---
 
