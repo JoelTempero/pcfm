@@ -73,6 +73,7 @@
 - Events (/events/list/)
 - Job Vacancies (/job-vacancies-2/)
 - Contact (/contact/)
+- Regional (/regional/)
 - Sign Up to Newsletter (/sign-up-to-our-newsletter/)
 ```
 
@@ -82,7 +83,16 @@
 URL: /
 Route: /
 
-### Hero
+### Welcome Text (from original site)
+"Welcome to the Presbyterian Children and Families website. Here you will find a range of resources, ideas and information to support your ministry with children."
+
+### Seasonal Content (rotating homepage banners)
+- "Advent and Christmas is fast approaching! Check out our range of worship, prayer, nativity, and family resources."
+- "Every year, churches across the motu host Light Parties, or similar alternatives to Halloween. To help share the Gospel message in a tangible and easy way, we have created a 'Light in the Dark' resource. This resource is free to download and can be printed as you wish (including professional printing). We simply ask that you do not alter the contents, or remove the copyright. You are welcome to add your church contact details in the space provided."
+- "This resource will guide you through practicing this awesome spiritual discipline as a family."
+- "Keep up to date with all our latest news from PCFM and read the latest copy of our newsletter 'Woven'."
+
+### Hero (from demo)
 - Tagline: "Presbyterian Church of Aotearoa New Zealand"
 - Heading: "Nurturing Faith in Every Whanau"
 - Subtitle: "Supporting communities of faith to share God's big story by engaging authentically with children and families across Aotearoa."
@@ -207,9 +217,18 @@ Route: /about
 ### Mission
 "To serve the PCANZ through servant leadership, advocacy and resourcing for authentic engagement with children and families, so that they are woven into the fabric/DNA of the church and are able to fully participate."
 
+### What PCFM Does
+- "PCFM advocates for children and families so that they are woven into the fabric/DNA of the faith community and have full participation."
+- "They encourage, equip, resource and support church leaders, and those who work with children and young people."
+- The website is described as "a kete of resources to help churches and families in the important, God-called task of discipling children and young people."
+- "The Children and Families Ministry -- a whanau-based ministry -- is a response to the vital roles families have in forming faith in their children and the partnership the gathered church has in supporting them."
+- "Children and Families is a ministry of the Presbyterian Church of Aotearoa New Zealand (PCANZ). The ministry to children and families in the Presbyterian church is supported both by the National Service Team and Regional Presbyteries."
+
 ### History
 
-"A ministry to children and their families has always been at the heart of the church. Early settlers to New Zealand brought the practice of Sunday School, and the Presbyterian Church has long been known for its children and youth ministries. Throughout much of the twentieth century, the Sunday School and Bible Class movements were very strong."
+"A ministry to children and their families has always been at the heart of the church. Early settlers to New Zealand brought the practice of Sunday School to the church, along with a passion for teaching the gospel to children and youth, as seen in all-age Sunday School, Children's Clubs, Bible Class, and Presbyterian Church Schools."
+
+"Consistent with its commitment to education, the Presbyterian Church has long been known for its children and youth ministries. Throughout much of the twentieth century, the Sunday School and Bible Class movements were very strong."
 
 (Reference: Graham Redding, *The Presbyterian Church of Aotearoa New Zealand: A Brief History*, 4 September, 2012, p.13)
 
@@ -230,7 +249,7 @@ Route: /about
 - Qualification: BTheol (Otago University, 2019, majoring in Christian Thought and History)
 - Bio: Originally from Oamaru. First ministry role was as youth worker for Calvin Community Church (Gore), where she developed a passion for community outreach. Her time in Gore also saw her working for a local Youth Trust and Early Childhood centre. In 2018, Karo returned to Oamaru to take up the Youth and Children's pastor role at Waiareka-Weston Presbyterian Church. Worked for PCFM since 2022, initially as Associate Director, before taking over the role of Director in 2023.
 - Passions: "Passionate about helping young people discover who Jesus is, and finding their place within God's family, and in His Big Story. Karo enjoys creating resources that help lead children and families into deeper conversations about God, Jesus and what faith looks like in our lives."
-- Part-time local role: Alongside her role at PCFM, Karo works part time in a local ministry context, focusing on community-based children's ministry programmes at Weston Presbyterian Church, in the Waitaki District.
+- Part-time local role: Alongside her role at PCFM, Karo works part time in a local ministry context, focusing on chaplaincy at the local primary school and other community-based children's ministry programmes at Weston Presbyterian Church, in the Waitaki District.
 - Email: karo@presbyterian.org.nz
 - Phone: 027 274 3322
 
@@ -244,6 +263,18 @@ Route: /about
 - Image: https://i0.wp.com/images.squarespace-cdn.com/content/v1/63bf2db7ead9f86479ce30eb/7a82a552-a8b5-4f7b-96d1-a924e8e4d254/Julianne.jpg
 - Bio: "Working part-time to oversee all things children, youth and family ministry related in the Kaimai Presbytery region."
 - Email: julianne@presbyterian.org.nz
+
+### Historical Team Members (no longer active)
+
+**Cheryl Harray** (retired November 2020)
+- Former Children & Families Advisor in Otago/Southland
+- Author of the "5 Matters" resource
+
+**Jill Kayser** (moved on in 2017)
+- Spearheaded the Church's ministry with children for 14 years
+- Established the Kids Friendly framework
+- Moved on to a new role as Chaplain at Large in the Auckland CBD (a St James Presbyterian and Aotea Methodist initiative)
+- Created the concept of an "Advent koru" instead of an Advent wreath
 
 ---
 
@@ -313,16 +344,38 @@ Route: /news
 URL: /events/list/
 Route: /events
 
+### Technical Notes
+- Uses **Tribe Events** calendar plugin for WordPress
+- Events are browsable by month (e.g., /events/month/) with list and month views
+
 ### Events Found
 1. **Intergenerate Conference -- Auckland** (November 2025)
    - "In this face-to-face gathering, David Csinos led attendees through his book *A Gospel For All Ages*. Alongside David's keynote were interactive experiences hosted by Tammy Preston called 'GLASSHOUSES' -- a signature piece of the Intergenerate Australia and New Zealand Conferences. Local facilitators brought dynamic practical workshops, and morning tea, afternoon tea, and lunch were included in the ticket price."
 
 2. **WAY2GO Conference -- Palmerston North**
    - URL: /event/way2go-conference-palmerston-north/
+   - Scripture Union Children's Ministry Training Conference
+   - Theme: "First Things First"
+   - "Smaller, regional, relational training format"
    - Note: WAY2GO is run by Scripture Union NZ (SUNZ)
 
 3. **WAY2GO Conference -- Auckland**
    - URL: /event/way2go-conference-auckland/
+   - Same conference series, Auckland location
+
+4. **Matariki**
+   - URL: /event/matariki-2/
+   - "Matariki celebrations commence 19 June and continue through 11 July."
+   - One-page resource includes Bible readings, information, suggested reflections, a recommended read, a song and a link from Scripture Union NZ
+
+5. **Father's Day**
+   - URL: /events/month/?s=&tribe_events=fathers-day-3
+
+6. **The Season of Lent**
+   - URL: /event/the-season-of-lent/
+
+7. **Praying for Children**
+   - URL: /event/praying-for-children/
 
 ---
 
