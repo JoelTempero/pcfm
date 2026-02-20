@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deep-teal: #1a5c52;
+  --color-teal: #2d8a7e;
+  --color-light-teal: #4aa89a;
+  --color-cream: #faf8f5;
+  --color-warm-white: #fffefb;
+  --color-terracotta: #c4714c;
+  --color-terracotta-light: #e8956e;
+  --color-earth: #8b7355;
+  --color-text: #2d3a36;
+  --color-text-light: #5a6b64;
+  --color-footer-bg: #1a2e2a;
+
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-cream);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
