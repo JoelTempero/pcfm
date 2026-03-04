@@ -25,6 +25,16 @@ import PodcastsForLeaders from './pages/PodcastsForLeaders'
 import FiveMatters from './pages/FiveMatters'
 import NewsletterSignup from './pages/NewsletterSignup'
 import ThinkingIntergenerational from './pages/ThinkingIntergenerational'
+import SharingFaithAtHome from './pages/SharingFaithAtHome'
+import LectioDivina from './pages/LectioDivina'
+import EastertideFamilyFaithMoments from './pages/EastertideFamilyFaithMoments'
+import KidsFriendlyArchives from './pages/KidsFriendlyArchives'
+import Podcasts from './pages/Podcasts'
+import OtherMinistries from './pages/OtherMinistries'
+import LeadersLentEaster from './pages/LeadersLentEaster'
+import WovenArchives from './pages/WovenArchives'
+import OnlineChristmasSkitArchive from './pages/OnlineChristmasSkitArchive'
+import KidsFriendly from './pages/KidsFriendly'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -56,6 +66,16 @@ export default function App() {
         <Route path="/5-matters" element={<FiveMatters />} />
         <Route path="/newsletter-signup" element={<NewsletterSignup />} />
         <Route path="/thinking-intergenerational" element={<ThinkingIntergenerational />} />
+        <Route path="/sharing-faith-at-home" element={<SharingFaithAtHome />} />
+        <Route path="/lectio-divina" element={<LectioDivina />} />
+        <Route path="/eastertide-family-faith-moments" element={<EastertideFamilyFaithMoments />} />
+        <Route path="/kids-friendly-archives" element={<KidsFriendlyArchives />} />
+        <Route path="/podcasts" element={<Podcasts />} />
+        <Route path="/other-ministries" element={<OtherMinistries />} />
+        <Route path="/leaders-lent-easter" element={<LeadersLentEaster />} />
+        <Route path="/woven-archives" element={<WovenArchives />} />
+        <Route path="/online-christmas-skit-archive" element={<OnlineChristmasSkitArchive />} />
+        <Route path="/kids-friendly" element={<KidsFriendly />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

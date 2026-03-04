@@ -3,29 +3,34 @@ import type { JobListing, EventItem } from '../types'
 export const jobListings: JobListing[] = [
   {
     id: '1',
-    title: 'Greyfriar\'s Eden Epsom Presbyterian Church, Auckland',
-    description: 'Looking for a creative person with a deep Christian faith and a desire to help children grow spiritually. You will help children to learn about the Christian faith and the Bible, to develop their relationship with Jesus, and to have fun with friends. You will lead/support existing ministries and explore new avenues for ministry with children. Up to 30 hours per week.',
-    contactEmail: 'greyfriarsvacancy@gmail.com',
+    title: 'Youth and Children\'s Worker — Weston Community Church, Oamaru',
+    description: 'Part-time role to lead the ongoing development of children and young people\'s ministries. Lead, support and help equip a team of committed volunteers. Experience in youth ministry required; committed to growing faith; strong in managing relationships within a team.',
+    contactEmail: 'admin@westoncommunitychurch.org.nz',
   },
   {
     id: '2',
-    title: 'St John\'s Arrowtown (Wakatipu Presbyterian Church)',
-    description: 'Children\'s/Family Worker, 32 hours/week. Their goal is to grow spiritually healthy families, fostering a new generation that has an active relationship with Jesus. Their children\'s ministry is "a spiritually forming, parent-empowering ministry that equips children, leaders and families to know Jesus and live out a vibrant lifetime faith."',
-    contact: 'Rev Carlton Johnstone',
-    contactEmail: 'stjohns.arrowtown.wpc@gmail.com',
-    contactPhone: '027 272 0012',
+    title: 'Children\'s Ministry Leader — Hibiscus Coast Presbyterian Church, Auckland',
+    description: 'Part-time, 10 hours per week. Leading Sunday morning children\'s ministry during school terms, preparing engaging activities, collaborating weekly with Rev. Werner Schroeder for mentoring and ministry development. Requirements: vibrant faith and testimony, passion for nurturing children\'s faith, creativity, leadership and organisational skills, PYM Warrant of Fitness (WoF) Training, Police Clearance Check (PCANZ).',
+    contactPhone: '09 426 4502',
   },
   {
     id: '3',
-    title: 'Mosgiel North Taieri Presbyterian Church',
-    description: 'Seeking to employ a Children and Families worker.',
-    contact: 'Rachel Judge',
-    contactEmail: 'rachel.judge@mosgielchurch.org.nz',
+    title: 'Children\'s Ministry Leader — Bethlehem Community Church, Tauranga',
+    description: 'Part-time, 20 hours per week. Coordinating children\'s ministry including Sunday morning programmes, Mainly Music and one-off events. Requirements: Christian faith, good Christian role model, make BCC their church home.',
   },
   {
     id: '4',
-    title: 'The Village',
-    description: 'Opportunity to join their ministry team with the role of leading ministry to children. Enabling their vision in the context of developing Sunday morning children\'s ministry and a community-facing after school club that operates two afternoons per week during term time.',
+    title: 'Children and Families Ministry Worker — Hawkes Bay',
+    description: '20 hours per week, initial 2-year contract across 5 Hawkes Bay Presbyterian churches. Key tasks: developing and supporting Children & Family leadership teams; running intergenerational services and events. Requirements: proven ministry with Children and Families; proven experience in mentoring leaders and building teams; some formal theological education preferred.',
+    contact: 'Brett Walker',
+    contactEmail: 'brett_walker@xtra.co.nz',
+  },
+  {
+    id: '5',
+    title: 'Children\'s Ministry Coordinator — Cromwell Presbyterian Church',
+    description: 'Part-time, 30 hours per week. Coordinating children\'s ministry including Sunday morning program, Messy Church, Mainly Music and one-off events. Requirements: Christian faith, good Christian role model, make Cromwell Presbyterian their church home.',
+    contact: 'Barbara Carston',
+    contactEmail: 'barbaracarston@gmail.com',
   },
 ]
 

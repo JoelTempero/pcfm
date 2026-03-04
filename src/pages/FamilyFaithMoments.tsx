@@ -1,8 +1,30 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { FileText, ArrowRight } from 'lucide-react'
 import PageHero from '../components/ui/PageHero'
 import Section from '../components/ui/Section'
 import AnimatedElement from '../components/ui/AnimatedElement'
+
+const familyFaithMoments: { title: string; pdf?: string; link?: string }[] = [
+  { title: 'New Year / Epiphany', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/Epiphany-FFM.pdf' },
+  { title: 'Back to School', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/Back-to-school-FFM.pdf' },
+  { title: 'Palm Sunday', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/Palm-Sunday-FFM.pdf' },
+  { title: 'Holy Week & Eastertide Series', link: '/eastertide-family-faith-moments' },
+  { title: 'ANZAC Day', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/ANZAC-Day-FFM-1.pdf' },
+  { title: 'A Blessing for Mothers', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/A-Blessing-for-Mothers.pdf' },
+  { title: 'Mothers Day', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/A-Blessing-for-Mothers-2023-1.pdf' },
+  { title: 'Pentecost', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/Pentecost-FFM.pdf' },
+  { title: 'Matariki (2023)', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/Matariki-FFM-2023-version.pdf' },
+  { title: 'Matariki (2024)', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/Matariki-FFM-2024.pdf' },
+  { title: 'Season of Creation', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/Season-of-Creation.pdf' },
+  { title: 'A Special Blessing for Fathers', pdf: 'https://pcfm.org.nz/wp-content/uploads/2024/08/A-Special-Blessing-for-Fathers-Day-2024.pdf' },
+  { title: 'A Blessing for Fathers (2024)', pdf: 'https://pcfm.org.nz/wp-content/uploads/2024/08/A-Blessing-for-Fathers-2024.pdf' },
+  { title: 'A Blessing for Fathers (2022)', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/Fathers-Day-2024-1.pdf' },
+  { title: 'Advent: Hope', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/Advent-FFM-2023.pdf' },
+  { title: 'Advent: Peace', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/Advent-FFM-2023-3.pdf' },
+  { title: 'Advent: Joy', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/Advent-FFM-2023-1.pdf' },
+  { title: 'Advent: Love', pdf: 'https://pcfm.org.nz/wp-content/uploads/2025/04/Advent-FFM-2023-2.pdf' },
+  { title: 'Coronation Day', pdf: 'https://pcfm.org.nz/wp-content/uploads/2023/04/Coronation-FFM.pdf' },
+]
 
 export default function FamilyFaithMoments() {
   return (
@@ -21,30 +43,33 @@ export default function FamilyFaithMoments() {
           </AnimatedElement>
 
           <AnimatedElement>
-            <h2 className="font-display text-2xl font-bold text-deep-teal mb-6">Themes</h2>
+            <h2 className="font-display text-2xl font-bold text-deep-teal mb-6">Downloadable Resources</h2>
           </AnimatedElement>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              { title: 'Back to School', icon: '📚' },
-              { title: 'Easter / Lent & Holy Week', icon: '🕯️', link: '/lent-and-easter' },
-              { title: 'ANZAC Day', icon: '🌺' },
-              { title: 'Pentecost', icon: '🔥', link: '/pentecost' },
-              { title: 'Matariki', icon: '⭐' },
-              { title: 'Advent & Christmas', icon: '🎄', link: '/advent-and-christmas' },
-            ].map((theme, i) => (
-              <AnimatedElement key={theme.title} delay={i * 0.05}>
-                {theme.link ? (
-                  <Link to={theme.link} className="bg-white rounded-[15px] p-5 flex items-center gap-4 no-underline shadow-[0_4px_15px_rgba(26,92,82,0.06)] hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(26,92,82,0.1)] transition-all group">
-                    <span className="text-3xl">{theme.icon}</span>
-                    <span className="font-display font-semibold text-deep-teal group-hover:text-teal transition-colors">{theme.title}</span>
-                    <ArrowRight className="w-4 h-4 text-terracotta ml-auto" />
-                  </Link>
-                ) : (
-                  <div className="bg-white rounded-[15px] p-5 flex items-center gap-4 shadow-[0_4px_15px_rgba(26,92,82,0.06)]">
-                    <span className="text-3xl">{theme.icon}</span>
-                    <span className="font-display font-semibold text-deep-teal">{theme.title}</span>
-                  </div>
-                )}
+            {familyFaithMoments.map((item, i) => (
+              <AnimatedElement key={item.title} delay={i * 0.03}>
+                <div className="bg-white rounded-[15px] p-5 shadow-[0_4px_15px_rgba(26,92,82,0.06)] flex items-center justify-between gap-3 h-full">
+                  <h3 className="font-display text-base font-semibold text-deep-teal">{item.title}</h3>
+                  {item.pdf && (
+                    <a
+                      href={item.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-display text-sm text-terracotta no-underline inline-flex items-center gap-1 shrink-0 hover:gap-2 transition-all"
+                    >
+                      <FileText className="w-4 h-4" /> PDF
+                    </a>
+                  )}
+                  {item.link && (
+                    <Link
+                      to={item.link}
+                      className="font-display text-sm text-terracotta no-underline inline-flex items-center gap-1 shrink-0 hover:gap-2 transition-all"
+                    >
+                      View <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  )}
+                </div>
               </AnimatedElement>
             ))}
           </div>

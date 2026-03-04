@@ -65,7 +65,8 @@ export default function Contact() {
                   <strong className="font-display block mb-1 text-text">Email</strong>
                   <p className="text-text-light text-sm">
                     <a href="mailto:karo@presbyterian.org.nz" className="text-teal no-underline hover:text-terracotta transition-colors">karo@presbyterian.org.nz</a> (Karo Wilson, Director)<br />
-                    <a href="mailto:childrenandfamilies@presbyterian.org.nz" className="text-teal no-underline hover:text-terracotta transition-colors">childrenandfamilies@presbyterian.org.nz</a> (General)
+                    <a href="mailto:childrenandfamilies@presbyterian.org.nz" className="text-teal no-underline hover:text-terracotta transition-colors">childrenandfamilies@presbyterian.org.nz</a> (General)<br />
+                    <a href="mailto:pcfm@presbyterian.org.nz" className="text-teal no-underline hover:text-terracotta transition-colors">pcfm@presbyterian.org.nz</a> (PCFM)
                   </p>
                 </div>
               </div>

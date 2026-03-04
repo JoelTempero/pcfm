@@ -24,14 +24,24 @@ export default function LightParty() {
                 <p className="text-text-light leading-relaxed mb-4">
                   Every year, churches across the motu host Light Parties, or similar alternatives to Halloween. To help share the Gospel message in a tangible and easy way, we have created our 'Light in the Dark' resource. This resource is free to download and can be printed as you wish (including professional printing). We ask that you do not alter the contents or remove the copyright — you are welcome to add your church contact details in the space provided.
                 </p>
-                <a
-                  href="https://pcfm.org.nz/wp-content/uploads/2024/09/Light-Party-Resource-2024.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-display font-semibold text-base px-6 py-3 rounded-full bg-terracotta text-white no-underline inline-flex items-center gap-2 transition-all hover:bg-terracotta-light hover:-translate-y-0.5"
-                >
-                  <FileText className="w-5 h-5" /> Download 2024 Resource (PDF)
-                </a>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href="https://pcfm.org.nz/wp-content/uploads/2024/09/Light-Party-Resource-2024.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-display font-semibold text-base px-6 py-3 rounded-full bg-terracotta text-white no-underline inline-flex items-center gap-2 transition-all hover:bg-terracotta-light hover:-translate-y-0.5"
+                  >
+                    <FileText className="w-5 h-5" /> Download 2024 Resource (PDF)
+                  </a>
+                  <a
+                    href="https://pcfm.org.nz/wp-content/uploads/2024/09/BW-Light-Party-Resource.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-display font-semibold text-base px-6 py-3 rounded-full border-2 border-deep-teal text-deep-teal no-underline inline-flex items-center gap-2 transition-all hover:bg-deep-teal hover:text-white hover:-translate-y-0.5"
+                  >
+                    <FileText className="w-5 h-5" /> Monochrome Version (PDF)
+                  </a>
+                </div>
               </div>
             </div>
           </AnimatedElement>

@@ -1,3 +1,4 @@
+import { ExternalLink, Mail } from 'lucide-react'
 import PageHero from '../components/ui/PageHero'
 import Section from '../components/ui/Section'
 import AnimatedElement from '../components/ui/AnimatedElement'
@@ -22,6 +23,23 @@ export default function PrayingForChildren() {
             <p className="text-text-light mb-8 leading-relaxed">
               Rev. Roxy Gahegan's blog "Seeds of Love" provides prayers and pause points to accompany each of the daily themes.
             </p>
+          </AnimatedElement>
+
+          <AnimatedElement>
+            <div className="bg-white rounded-[15px] p-6 shadow-[0_4px_15px_rgba(26,92,82,0.06)] mb-8">
+              <h2 className="font-display text-xl font-bold text-deep-teal mb-3">Praying for Children Blog</h2>
+              <p className="text-text-light leading-relaxed mb-4">
+                Visit the NZ Praying for Children blog for the latest prayers, resources, and reflections.
+              </p>
+              <a
+                href="https://nzprayingforchildren.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-display font-semibold text-sm text-terracotta no-underline inline-flex items-center gap-2 hover:gap-3 transition-all"
+              >
+                <ExternalLink className="w-4 h-4" /> Visit nzprayingforchildren.org
+              </a>
+            </div>
           </AnimatedElement>
 
           <AnimatedElement>
@@ -52,11 +70,31 @@ export default function PrayingForChildren() {
           </AnimatedElement>
 
           <AnimatedElement>
-            <div className="bg-cream rounded-[15px] p-6">
+            <div className="bg-cream rounded-[15px] p-6 mb-6">
               <h3 className="font-display text-base font-semibold text-deep-teal mb-2">Credits</h3>
               <p className="text-sm text-text-light">
                 Resources created by Anne Overton, Melanie Te Au, Rev Sharon Ross Ensor, and Karo Wilson. Funded by Presbyterian Development Society grant. Resources available in English, te reo Maori, Samoan, and Korean.
               </p>
+            </div>
+          </AnimatedElement>
+
+          <AnimatedElement>
+            <div className="bg-cream rounded-[15px] p-6">
+              <h3 className="font-display text-base font-semibold text-deep-teal mb-3">Contact</h3>
+              <div className="space-y-2">
+                <a
+                  href="mailto:anne.overton@psn.org.nz"
+                  className="font-display text-sm text-terracotta no-underline flex items-center gap-2 hover:gap-3 transition-all"
+                >
+                  <Mail className="w-4 h-4" /> anne.overton@psn.org.nz
+                </a>
+                <a
+                  href="mailto:sharon.rossensor@psn.org.nz"
+                  className="font-display text-sm text-terracotta no-underline flex items-center gap-2 hover:gap-3 transition-all"
+                >
+                  <Mail className="w-4 h-4" /> sharon.rossensor@psn.org.nz
+                </a>
+              </div>
             </div>
           </AnimatedElement>
         </div>

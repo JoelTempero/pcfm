@@ -83,11 +83,14 @@ export default function Resources() {
       <Section className="bg-warm-white" title="More Resources">
         <div className="max-w-[900px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
           {[
+            { title: 'Family Faith Moments', description: 'Downloadable resources for families to celebrate significant days throughout the year.', link: '/family-faith-moments' },
             { title: 'Curriculum Resources', description: 'Structured teaching resources and ideas for children\'s ministry.', link: '/curriculum-resources-and-ideas' },
-            { title: 'Family Faith Moments', description: 'Resources for families to celebrate significant days throughout the year.', link: '/family-faith-moments' },
+            { title: 'Eastertide Family Faith Moments', description: 'A series of resources for Holy Week and the Easter season.', link: '/eastertide-family-faith-moments' },
             { title: 'Praying for Children', description: 'Resources for praying for the children of Aotearoa.', link: '/praying-for-children' },
-            { title: 'Pandemic Resources', description: 'Creative resources for ministering to children and families during times of isolation.', link: '/pandemic-resources' },
-            { title: 'Reading is Like Chocolate', description: 'Reflections and resources on the joy of reading with children.', link: '/reading-is-like-chocolate' },
+            { title: 'Other Ministries', description: 'Partner organisations supporting children and families ministry.', link: '/other-ministries' },
+            { title: 'Pandemic Resources', description: 'Creative resources for ministering during times of isolation.', link: '/pandemic-resources' },
+            { title: 'Woven Newsletter Archives', description: 'Browse past issues of the PCFM newsletter.', link: '/woven-archives' },
+            { title: 'Reading is Like Chocolate', description: 'Reflections on the joy of reading with children.', link: '/reading-is-like-chocolate' },
             { title: 'Creation Care', description: 'Resources on caring for God\'s creation together.', link: '/creation-care' },
           ].map((item, i) => (
             <AnimatedElement key={item.title} delay={i * 0.05}>
