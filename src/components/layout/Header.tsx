@@ -27,7 +27,7 @@ export default function Header() {
       >
         <nav className="max-w-[1400px] mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center no-underline">
-            <img src={`${import.meta.env.BASE_URL}pcfm-logo.jpg`} alt="Presbyterian Children & Families Ministry" className="h-14" />
+            <img src={`${import.meta.env.BASE_URL}pcfm-logo.jpg`} alt="Presbyterian Children & Families Ministry" className="h-28" />
           </Link>
 
           <ul className="hidden md:flex items-center gap-8 list-none">

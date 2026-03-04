@@ -60,11 +60,24 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-deep-teal via-teal to-light-teal" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)' }} />
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.3)_0%,transparent_50%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.2)_0%,transparent_40%)]" />
         <div className="relative z-10 max-w-[900px] text-center text-white">
+          <motion.div
+            className="mb-8"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}pcfm-logo.jpg`}
+              alt="Presbyterian Children & Families Ministry"
+              className="h-40 md:h-52 mx-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
+          </motion.div>
           <motion.p
             className="font-display text-sm font-medium tracking-[0.15em] uppercase opacity-90 mb-5"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 0.9, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
             Presbyterian Church of Aotearoa New Zealand
           </motion.p>
@@ -72,7 +85,7 @@ export default function Home() {
             className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.1] mb-5"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
           >
             Nurturing Faith in Every Whanau
           </motion.h1>
@@ -80,7 +93,7 @@ export default function Home() {
             className="text-xl max-w-[600px] mx-auto mb-8 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
           >
             Supporting communities of faith to share God's big story by engaging authentically with children and families across Aotearoa.
           </motion.p>
@@ -88,7 +101,7 @@ export default function Home() {
             className="flex gap-4 justify-center flex-wrap"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
           >
             <Link
               to="/resources"
