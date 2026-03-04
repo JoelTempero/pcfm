@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
-import KoruLogo from '../ui/KoruLogo'
 import { mainNavLinks } from '../../data/navigation'
 
 export default function Header() {
@@ -22,17 +21,13 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 transition-all duration-400 ${
-          scrolled ? 'bg-warm-white/95 backdrop-blur-[10px] shadow-[0_2px_30px_rgba(26,92,82,0.08)]' : ''
+        className={`fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 transition-all duration-400 bg-white ${
+          scrolled ? 'shadow-[0_2px_30px_rgba(26,92,82,0.08)]' : ''
         }`}
       >
         <nav className="max-w-[1400px] mx-auto flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-3 no-underline">
-            <KoruLogo />
-            <div className="font-display font-semibold text-[1.1rem] text-deep-teal leading-tight">
-              Children & Families
-              <span className="block text-xs font-normal text-text-light">A whanau-based ministry</span>
-            </div>
+          <Link to="/" className="flex items-center no-underline">
+            <img src={`${import.meta.env.BASE_URL}pcfm-logo.jpg`} alt="Presbyterian Children & Families Ministry" className="h-14" />
           </Link>
 
           <ul className="hidden md:flex items-center gap-8 list-none">
