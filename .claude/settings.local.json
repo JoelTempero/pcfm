@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm ci:*)",
+      "Bash(gh run:*)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run:*)",
+      "Bash(curl:*)"
+    ]
+  }
+}
