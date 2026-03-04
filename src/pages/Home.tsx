@@ -67,7 +67,7 @@ export default function Home() {
             transition={{ duration: 1, ease: 'easeOut' }}
           >
             <img
-              src={`${import.meta.env.BASE_URL}pcfm-logo.jpg`}
+              src="https://tempero.nz/assets/images/gallery01/6212bac1.png?v=4a5a960a"
               alt="Presbyterian Children & Families Ministry"
               className="h-40 md:h-52 mx-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
               style={{ filter: 'brightness(0) invert(1)' }}
